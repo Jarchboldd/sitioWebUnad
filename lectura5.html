@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <title>¿Qué es HTML?</title>
+    <title>Conectar PHP con una base de datos</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -59,27 +59,60 @@
         </nav>
         <div class="container">
             <div class="text-center py-5">
-                <h1>¿Qué es HTML?</h1>
-                <p>HyperText Markup Language.</p>
+                <h1>Conectar PHP con una base de datos</h1>
             </div>
             <div class="row">
                 <div class="col-sm-12 col-md-6 text-justify">
-                    <p>Es el lenguaje base para casi todo el contenido Web. La mayor parte de los contenidos de Internet que ves en la pantalla del navegador están descritas,
-                        fundamentalmente, usando HTML. Más exactamente, podemos decir que el HTML es el lenguaje que describe la estructura y el contenido semántico de un documento o página Web.</p>
-                    <p>Cuando miras una página web en el navegador, lo que ves a simple vista son palabras. Estas palabras normalmente tienen algunas características, como diferentes tamaños y colores. En algunos casos la página web puede mostrar imágenes o incluso vídeos. Otras veces, formularios donde puedes introducir o buscar información,
-                          o personalizar la apariencia de la página que estás viendo. La página también puede contener animaciones y contenidos que cambian mientras el resto de la página se mantiene sin cambios.</p>
-                    <p>El lenguaje HTML puede ser creado y editado con cualquier editor de textos básico, como puede ser Gedit en GNU/Linux, el Bloc de notas de Windows,
-                          o cualquier otro editor que admita texto sin formato como GNU Emacs, Microsoft Wordpad, TextPad, Vim, Notepad++, entre otros.</p>
+                    <p>Debemos tener creada una base de datos, si no sabes cómo <a href="lectura4.html">aquí</a> te lo mostramos. Utilizaremos una base de datos llamada 'alumnos'.</p>
+                    <p>Primero se crean las variables para almacenar los datos de la base de datos que se han de utilizar:</p>
+                    <p><pre><code>
+                        $usuario = "root";
+                        $contrasena = "1234";
+                        $servidor = "localhost";
+                        $basededatos = "alumnos";
+                    </code></pre></p>
+                    <p>Ahora vamos a crear la conexión con el servidor de la base de datos mediante la función <code>mysqli_connect()</code> y las variables que previamente se han creado. Para ello crearemos una variable <code>$conexion</code> que contendrá la conexión.</p>
+                    <p><code>$conexion = mysqli_connect( $servidor, $usuario, "1234" );</code></p>
+                    <p>Ahora que se ha realizado la conexión con el servidor de Base de Datos lo que se debe hacer es seleccionar la base de datos a utilizar.</p>
+                    <p>Se utilizará la función <code>mysqli_select_db()</code> mediante el siguiente comando:</p>
+                    <p><code>$db = mysqli_select_db( $conexion, $basededatos );</code></p>
+                    <p>Para realizar una consulta se utilizará la función <code>mysqli_query()</code> en donde se indicará la consulta ha realizar.</p>
+                    <p>Antes se guardará la consulta en una variable:</p>
+                    <p><code>$consulta = "SELECT * FROM alumnos";</code></p>
+                    <p>Digitamos la función de la siguiente forma:</p>
+                    <p><code>$resultado = mysqli_query( $conexion, $consulta );</code></p>
+                    <p>Ahora para mostrar los datos en formato de tabla, primero hacemos la parte de los encabezados:</p>
+                    <p><pre><code>
+                        echo "&lt;table borde='2'&gt;";<span class="text-success"> Aquí abrimos la tabla</span>
+                        echo "&lt;tr&gt;";
+                        echo "&lt;th&gt;Nombre&lt;/th&gt;";
+                        echo "&lt;th&gt;Edad&lt;/th&gt;";
+                        echo "&lt;/tr&gt;";
+                    </code></pre></p>
+                    <p>Después mediante un <code>WHILE</code> creamos las filas de las tablas</p>
+                    <p><pre><code>
+                        while ($columna = mysqli_fetch_array( $resultado ))
+                        {
+                        echo "&lt;tr&gt;";
+                        echo "&lt;td&gt;" . $columna['nombre'] . "&lt;/td&gt;&lt;td&gt;" . $columna['edad'] . "&lt;/td&gt;";
+                        echo "&lt;/tr&gt;";
+                        }
+                        echo "&lt;/table&gt;";<span class="text-success"> Aquí cerramos la tabla</span>
+                    </code></pre></p>
+                    <p>Si ejecutamos el código el resultado sería algo como lo siguiente:</p>
+                    <p><img src="Imagenes/Consulta-BD.png" width="200" height="200" alt="img consulta" class="img-thumbnail"></p>
+                    <p>Y por último para cerrar la conexión a la base de datos utilizamos la función <code>mysqli_close()</code> de la siguiente manera:</p>
+                    <p><code>mysqli_close( $conexion );</code></p>
                 </div>
                     <div class="col-sm-12 col-md-6 py-2 text-center">
-                        <img src="Imagenes\HTML5_logo.svg" width="300" height="300" alt="Logo HTML5" class="img-thumbnail">
+                        <img src="Imagenes/phpmysql.jpg" width="400" height="400" alt="Logo HTML5" class="img-thumbnail">
                     </div>
             </div>
             <div class="py-5">
                 <h5>Referencias bibliográficas.</h5>
                 <hr>
-                <p>Guía del desarrollador HTML. (s.f.). En MDN web docs. Recuperado el 18 de abril de 2019  de <a href="https://developer.mozilla.org/es/docs/Web/Guide/HTML">https://developer.mozilla.org/es/docs/Web/Guide/HTML</a></p>
-                <p>HTML. (s.f.). En Wikipedia. Recuperado el 18 de abril de 2019  de <a href="https://es.wikipedia.org/wiki/HTML">https://es.wikipedia.org/wiki/HTML</a></p>
+                <p>Conectar a una Base de Datos MySQL desde PHP. (17-01-2017). De Oscar Abad Folgueira. Recuperado el 28 de abril de 2019 de <a href="http://www.oscarabadfolgueira.com/conectar-una-base-datos-mysql-desde-php/">http://www.oscarabadfolgueira.com/conectar-una-base-datos-mysql-desde-php/</a></p>
+                <p>PHP y MySQL, el dúo dinámico. (27-01-2015). En hostname. Recuperado el 28 de abril de 2019 de <a href="https://www.hostname.cl/blog/php-y-mysql-el-duo-dinamico">https://www.hostname.cl/blog/php-y-mysql-el-duo-dinamico</a></p>
             </div>
         </div>
         

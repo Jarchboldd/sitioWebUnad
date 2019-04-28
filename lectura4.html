@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <title>¿Qué es HTML?</title>
+    <title>Crear una base de datos</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -59,27 +59,43 @@
         </nav>
         <div class="container">
             <div class="text-center py-5">
-                <h1>¿Qué es HTML?</h1>
-                <p>HyperText Markup Language.</p>
+                <h1>Crear una base de datos en MySQL</h1>
             </div>
             <div class="row">
                 <div class="col-sm-12 col-md-6 text-justify">
-                    <p>Es el lenguaje base para casi todo el contenido Web. La mayor parte de los contenidos de Internet que ves en la pantalla del navegador están descritas,
-                        fundamentalmente, usando HTML. Más exactamente, podemos decir que el HTML es el lenguaje que describe la estructura y el contenido semántico de un documento o página Web.</p>
-                    <p>Cuando miras una página web en el navegador, lo que ves a simple vista son palabras. Estas palabras normalmente tienen algunas características, como diferentes tamaños y colores. En algunos casos la página web puede mostrar imágenes o incluso vídeos. Otras veces, formularios donde puedes introducir o buscar información,
-                          o personalizar la apariencia de la página que estás viendo. La página también puede contener animaciones y contenidos que cambian mientras el resto de la página se mantiene sin cambios.</p>
-                    <p>El lenguaje HTML puede ser creado y editado con cualquier editor de textos básico, como puede ser Gedit en GNU/Linux, el Bloc de notas de Windows,
-                          o cualquier otro editor que admita texto sin formato como GNU Emacs, Microsoft Wordpad, TextPad, Vim, Notepad++, entre otros.</p>
+                   <p>Antes de comenzar se asume que se tiene instalado MySQL en el computador.</p>
+                   <p>Lo primero que se debe hacer para poder ejecutar comandos es ejecutar el programa ‘mysql‘, ejecutamos desde la consola el siguiente comando:</p>
+                   <p><code>$mysql -u usuario -p</code></p>
+                   <p>No habrá contraseña si estás utilizando algún paquete como XAMPP. Ejecutamos el siguiente comando:</p>
+                   <p><code>$mysql -u root</code></p>
+                   <p>Ahora creamos una nueva base de datos mysql. Crearemos una base de datos llamada 'alumnos'</p>
+                   <p>Para crear la base de datos 'alumnos' digitamos el siguiente comando:</p>
+                   <p><code>CREATE DATABASE alumnos;</code></p>
+                   <p>Ahora vamos a crear una tabla para almacenar los datos.</p>
+                   <p>Para que mysql sepa a qué base de datos nos vamos a referir cuando introduzcamos los comandos, debemos indicárselo mediante el comando:</p>
+                   <p><code>USE alumnos;</code></p>
+                   <p>Vamos a crear una tabla que sólo tendrá dos campos: Nombre y edad</p>
+                   <p><code>CREATE TABLE alumnos (nombre VARCHAR(30), edad INT);</code></p>
+                   <p>Para comprobar los campos de la tabla que acabamos de crear podemos utilizar el comando DESCRIBE:</p>
+                   <p><code>DESCRIBE alumnos;</code></p>
+                   <p>El resultado será el siguiente:</p>
+                   <img src="Imagenes/Consola-BD.png" width="500" height="500" alt="img consola" class="img-thumbnail">
+                   <p>Para añadir registros a la base de datos usaremos el comando INSERT INTO seguido del nombre de la tabla y posteriormente VALUES seguido de los valores que queremos incluir.</p>
+                   <p><code>INSERT INTO alumnos VALUES ('Jose Sanchez', 22);</code></p>
+                   <p><code>INSERT INTO alumnos VALUES ('Alberto Jurado', 19);</code></p>
+                   <p><code>INSERT INTO alumnos VALUES ('Carlos Martín', 20);</code></p>
+                   <p>Dando como resultado:</p>
+                   <img src="Imagenes/Tabla-BD.png" width="300" height="300" alt="img consola" class="img-thumbnail">
                 </div>
                     <div class="col-sm-12 col-md-6 py-2 text-center">
-                        <img src="Imagenes\HTML5_logo.svg" width="300" height="300" alt="Logo HTML5" class="img-thumbnail">
+                        <img src="Imagenes/Database-mysql.svg" width="300" height="300" alt="img tabla" class="img-thumbnail">
                     </div>
             </div>
             <div class="py-5">
                 <h5>Referencias bibliográficas.</h5>
                 <hr>
-                <p>Guía del desarrollador HTML. (s.f.). En MDN web docs. Recuperado el 18 de abril de 2019  de <a href="https://developer.mozilla.org/es/docs/Web/Guide/HTML">https://developer.mozilla.org/es/docs/Web/Guide/HTML</a></p>
-                <p>HTML. (s.f.). En Wikipedia. Recuperado el 18 de abril de 2019  de <a href="https://es.wikipedia.org/wiki/HTML">https://es.wikipedia.org/wiki/HTML</a></p>
+                <p>Crear una base de datos MySQL desde consola. (16-01-2017). Por Oscar Abad Folgueira. Recuperado el 28 de abril de 2019 de <a href="http://www.oscarabadfolgueira.com/crear-una-base-datos-mysql-desde-consola/">http://www.oscarabadfolgueira.com/crear-una-base-datos-mysql-desde-consola/</a></p>
+                <p>Database-mysql.svg. (s.f.). En Wikipedia. Recuperado el 28 de abril de 2019 de <a href="https://upload.wikimedia.org/wikipedia/commons/b/b2/Database-mysql.svg">https://upload.wikimedia.org/wikipedia/commons/b/b2/Database-mysql.svg</a></p>
             </div>
         </div>
         
