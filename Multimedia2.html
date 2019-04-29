@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <title>Crear una base de datos</title>
+    <title>Como instalar MySQL Server</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">OVI</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -59,43 +59,16 @@
         </nav>
         <div class="container">
             <div class="text-center py-5">
-                <h1>Crear una base de datos en MySQL</h1>
+                <h1>Como instalar MySQL Server</h1>
+                <p>Video tutorial con paso a paso de como instalar MySQL</p>
             </div>
-            <div class="row">
-                <div class="col-sm-12 col-md-6 text-justify">
-                   <p>Antes de comenzar se asume que se tiene instalado MySQL en el computador.</p>
-                   <p>Lo primero que se debe hacer para poder ejecutar comandos es ejecutar el programa ‘mysql‘, ejecutamos desde la consola el siguiente comando:</p>
-                   <p><code>$mysql -u usuario -p</code></p>
-                   <p>No habrá contraseña si estás utilizando algún paquete como XAMPP. Ejecutamos el siguiente comando:</p>
-                   <p><code>$mysql -u root</code></p>
-                   <p>Ahora creamos una nueva base de datos mysql. Crearemos una base de datos llamada 'alumnos'</p>
-                   <p>Para crear la base de datos 'alumnos' digitamos el siguiente comando:</p>
-                   <p><code>CREATE DATABASE alumnos;</code></p>
-                   <p>Ahora vamos a crear una tabla para almacenar los datos.</p>
-                   <p>Para que mysql sepa a qué base de datos nos vamos a referir cuando introduzcamos los comandos, debemos indicárselo mediante el comando:</p>
-                   <p><code>USE alumnos;</code></p>
-                   <p>Vamos a crear una tabla que sólo tendrá dos campos: Nombre y edad</p>
-                   <p><code>CREATE TABLE alumnos (nombre VARCHAR(30), edad INT);</code></p>
-                   <p>Para comprobar los campos de la tabla que acabamos de crear podemos utilizar el comando DESCRIBE:</p>
-                   <p><code>DESCRIBE alumnos;</code></p>
-                   <p>El resultado será el siguiente:</p>
-                   <img src="Imagenes/Consola-BD.png" width="500" height="500" alt="img consola" class="img-thumbnail">
-                   <p>Para añadir registros a la base de datos usaremos el comando INSERT INTO seguido del nombre de la tabla y posteriormente VALUES seguido de los valores que queremos incluir.</p>
-                   <p><code>INSERT INTO alumnos VALUES ('Jose Sanchez', 22);</code></p>
-                   <p><code>INSERT INTO alumnos VALUES ('Alberto Jurado', 19);</code></p>
-                   <p><code>INSERT INTO alumnos VALUES ('Carlos Martín', 20);</code></p>
-                   <p>Dando como resultado:</p>
-                   <img src="Imagenes/Tabla-BD.png" width="300" height="300" alt="img consola" class="img-thumbnail">
-                </div>
-                    <div class="col-sm-12 col-md-6 py-2 text-center">
-                        <img src="Imagenes/Database-mysql.svg" width="300" height="300" alt="img tabla" class="img-thumbnail">
-                    </div>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Sv2vBT3dtvQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="py-5">
                 <h5>Referencias bibliográficas.</h5>
                 <hr>
-                <p>Crear una base de datos MySQL desde consola. (16-01-2017). Por Oscar Abad Folgueira. Recuperado el 28 de abril de 2019 de <a href="http://www.oscarabadfolgueira.com/crear-una-base-datos-mysql-desde-consola/">http://www.oscarabadfolgueira.com/crear-una-base-datos-mysql-desde-consola/</a></p>
-                <p>Database-mysql.svg. (s.f.). En Wikipedia. Recuperado el 28 de abril de 2019 de <a href="https://upload.wikimedia.org/wikipedia/commons/b/b2/Database-mysql.svg">https://upload.wikimedia.org/wikipedia/commons/b/b2/Database-mysql.svg</a></p>
+                <p>Walter Rosero. (01-10-2018). Como Instalar MySQL Server y MySQL Workbench en Windows | Paso a Paso [Archivo de video]. Recuperado de <a href="https://youtu.be/Sv2vBT3dtvQ">https://youtu.be/Sv2vBT3dtvQ</a></p>
             </div>
         </div>
         
