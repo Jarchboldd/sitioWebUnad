@@ -1,7 +1,7 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
-    <title>¿Qué es PHP?</title>
+    <title>Crear un formulario con HTML</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">OVI</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                       <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown active">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Lecturas
                         </a>
@@ -59,43 +59,28 @@
         </nav>
         <div class="container">
             <div class="text-center py-5">
-                <h1>¿Qué es PHP?</h1>
-                <p>Hypertext Preprocessor.</p>
+                <h1>Crear un formulario con HTML</h1>
+                <p>Ejercicio de HTML</p>
             </div>
-            <div class="row">
-              <div class="col-sm-12 col-md-6 text-justify">
-                  <p>Es un lenguaje de código abierto muy popular especialmente adecuado para el desarrollo web y que puede ser incrustado en HTML.</p>
-                  <p>Por ejemplo:</p>
-                  <pre><code>
-                    &lt;!DOCTYPE HTML&gt;
-                    &lt;html&gt;
-                      &lt;head&gt;
-                        &lt;title&gt;Sample text here...&lt;/title&gt;
-                      &lt;/head&gt;
-                      &lt;body&gt;
-                        &lt;?php
-                          echo "¡Hola, soy un script de PHP!";
-                        ?&gt;
-                      &lt;/body&gt;
-                    &lt;/html&gt;
-                  </code></pre>
-                  <p>Lo que distingue a PHP de algo del lado del cliente como Javascript es que el código es ejecutado en el servidor, generando HTML y enviándolo al cliente. El cliente recibirá el resultado de ejecutar el script, aunque no se sabrá el código subyacente que era. El servidor web puede ser configurado incluso para que procese todos los ficheros HTML con PHP,
-                     por lo que no hay manera de que los usuarios puedan saber qué se tiene debajo de la manga.</p>
-                  <p>Para poder ejecutar los scripts de PHP se necesita, en primer lugar, un servidor web que sea capaz de interpretar este lenguaje de programación. Para ello, tiene que complementarse con un intérprete PHP. Se trata, en este sentido, de un componente de software que puede identificar los pasajes de un archivo que contienen código PHP. En principio,
-                     PHP se puede ejecutar en cualquier servidor web y el intérprete forma parte del paquete de descarga de PHP.
-                      La versión actual puede descargarse de manera gratuita desde la página web oficial del proyecto <a href="https://www.php.net/downloads.php">php.net</a>.</p>
-              </div>
-              <div class="col-sm-12 col-md-6 py-2 text-center">
-                  <img src="Imagenes/PHP-logo.svg" width="300" height="300" alt="Logo PHP" class="img-thumbnail">
-              </div>
-              <div class="py-5">
-                  <h5>Referencias bibliográficas.</h5>
-                  <hr>
-                  <p>¿Qué es PHP?. (s.f.). En PHP. Recuperado el 22 de abril de 2019  de <a href="https://www.php.net/manual/es/intro-whatis.php">https://www.php.net/manual/es/intro-whatis.php</a></p>
-                  <p>¿Qué es PHP? Tutorial para principiantes. (28-08-2017). En ionos. Recuperado el 22 de abril de 2019  de <a href="https://www.ionos.es/digitalguide/paginas-web/creacion-de-paginas-web/tutorial-de-php-fundamentos-basicos-para-principiantes/">https://www.ionos.es/digitalguide/paginas-web/creacion-de-paginas-web/tutorial-de-php-fundamentos-basicos-para-principiantes/</a></p>
-              </div>
-          </div>
+            <div class="text-justify">
+                <p>Crear un formulario que contenga lo siguiente:</p>
+                <p>
+                  <ul>
+                    <li>Elementos <code>input</code>.</li>
+                    <li>Un elemento <code>datalist</code>, que contenga algunos nombres de ciudades y un campo de texto las relacione.</li>
+                    <li>Una caja de texto, al cual aplicar los atributos <code>autofocus</code>, <code>placeholder</code>, <code>required</code> y <code>autocomplete</code>.</li>
+                    <li>Un campo de selección de ficheros , al que aplicar el atributo <code>multiple</code>.</li>
+                    <li>Un elemento <code>progress</code> que represente el avance de completado de campos del formulario.</li>
+                  </ul>
+                </p>
+            </div>
+            <div class="py-5">
+                <h5>Referencias bibliográficas.</h5>
+                <hr>
+                <p>CAPÍTULO 18 EJERCICIOS. (s.f.). En arkaitzgarro. Recuperado el 28 de abril de 2019 de <a href="https://www.arkaitzgarro.com/html5/capitulo-18.html">https://www.arkaitzgarro.com/html5/capitulo-18.html</a></p>
+            </div>
         </div>
+        
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
